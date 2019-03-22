@@ -4,12 +4,13 @@ import a2.topping.*;
 import a2.drink.*;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
   private int orderNumber;
-  private List<Pizza> pizzas;
-  private List<Drink> Drinks;
+  private List<Pizza> pizzas = new ArrayList<Pizza>();
+  private List<Drink> Drinks = new ArrayList<Drink>();
   public Order(int orderNumber) {
     this.orderNumber = orderNumber;
   }

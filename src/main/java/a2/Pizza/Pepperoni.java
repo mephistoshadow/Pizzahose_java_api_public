@@ -2,10 +2,11 @@ package a2.Pizza;
 
 
 import a2.topping.Topping;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pepperoni implements Pizza {
-  private List<Topping> toppings;
+  private List<Topping> toppings = new ArrayList<Topping>();
   private String size;
   private String name;
   private double price;
