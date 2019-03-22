@@ -4,7 +4,7 @@ package a2.topping;
  * Created by melo45 on 2019-03-22.
  */
 public class ToppingFactory {
-  public Topping getDrink (String name) {
+  public Topping getTopping (String name) {
     if (name.equalsIgnoreCase("olives")) {
       return new Olives();
     } else if (name.equalsIgnoreCase("tomatoes")) {
