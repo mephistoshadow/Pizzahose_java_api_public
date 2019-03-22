@@ -9,8 +9,11 @@ public class Margherita implements Pizza {
   private List<String> toppings;
   private String size;
   private String name;
-  private int price;
-
+  private double price;
+  public Margherita() {
+      this.name = "margherita";
+      this.price = 2.3;
+    }
   public void setPrice(int price) {
     this.price = price;
   }
@@ -28,7 +31,7 @@ public class Margherita implements Pizza {
   }
 
   public String getName() {
-    return "margherita";
+    return this.name;
   }
   public void addTopping(String topping, List<String> toppings) {
     toppings.add(topping);

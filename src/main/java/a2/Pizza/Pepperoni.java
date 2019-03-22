@@ -7,8 +7,11 @@ public class Pepperoni implements Pizza {
   private List<String> toppings;
   private String size;
   private String name;
-  private int price;
-
+  private double price;
+  public Pepperoni() {
+    this.name = "Pepperoni";
+    this.price = 3.5;
+  }
   public void setPrice(int price) {
     this.price = price;
   }
@@ -26,7 +29,7 @@ public class Pepperoni implements Pizza {
   }
 
   public String getName() {
-    return "pepperoni";
+    return this.name;
   }
   public void addTopping(String topping, List<String> toppings) {
     toppings.add(topping);
