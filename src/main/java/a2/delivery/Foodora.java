@@ -1,4 +1,4 @@
 package a2.delivery;
 
-public class Foodora implements Delivery{
+public class Foodora extends Delivery{
 }
