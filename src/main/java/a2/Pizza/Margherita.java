@@ -14,7 +14,7 @@ public class Margherita implements Pizza {
       this.name = "margherita";
       this.price = 2.3;
     }
-  public void setPrice(int price) {
+  public void setPrice(double price) {
     this.price = price;
   }
 

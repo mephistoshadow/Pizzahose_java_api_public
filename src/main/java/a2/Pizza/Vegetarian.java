@@ -14,7 +14,7 @@ public class Vegetarian implements Pizza {
     this.name = "Vegetarian";
     this.price = 7.3;
   }
-  public void setPrice(int price) {
+  public void setPrice(double price) {
     this.price = price;
   }
 

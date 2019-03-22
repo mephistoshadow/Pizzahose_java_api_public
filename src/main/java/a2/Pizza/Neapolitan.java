@@ -14,7 +14,7 @@ public class Neapolitan implements Pizza{
     this.name = "Neapolitan";
     this.price = 21.3;
   }
-  public void setPrice(int price) {
+  public void setPrice(double price) {
     this.price = price;
   }
 

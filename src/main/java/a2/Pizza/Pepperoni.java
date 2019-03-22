@@ -13,7 +13,7 @@ public class Pepperoni implements Pizza {
     this.name = "Pepperoni";
     this.price = 3.5;
   }
-  public void setPrice(int price) {
+  public void setPrice(double price) {
     this.price = price;
   }
 
