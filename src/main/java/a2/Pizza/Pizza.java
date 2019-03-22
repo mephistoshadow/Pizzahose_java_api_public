@@ -6,18 +6,18 @@ import java.util.List;
  * Created by melo45 on 2019-03-21.
  */
 public interface Pizza {
-  public void setPrice(int price);
+  void setPrice(int price);
 
-  public double getPrice();
+  double getPrice();
 
-  public void setSize(String size);
+  void setSize(String size);
 
-  public String getSize();
+  String getSize();
 
-  public String getName();
+  String getName();
 
-  public void addTopping(String topping, List<String> toppings);
+  void addTopping(String topping, List<String> toppings);
 
-  public void preparation();
+  void preparation();
 
 }
