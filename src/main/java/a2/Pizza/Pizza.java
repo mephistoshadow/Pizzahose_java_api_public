@@ -1,5 +1,6 @@
 package a2.Pizza;
 
+import a2.topping.Topping;
 import java.util.List;
 
 /**
@@ -16,7 +17,7 @@ public interface Pizza {
 
   String getName();
 
-  void addTopping(String topping, List<String> toppings);
+  void addTopping(Topping topping, List<Topping> toppings);
 
   void preparation();
 

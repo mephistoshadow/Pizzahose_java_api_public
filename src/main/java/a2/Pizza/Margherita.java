@@ -1,5 +1,5 @@
 package a2.Pizza;
-
+import a2.topping.Topping;
 import java.util.List;
 
 /**
@@ -33,7 +33,7 @@ public class Margherita implements Pizza {
   public String getName() {
     return this.name;
   }
-  public void addTopping(String topping, List<String> toppings) {
+  public void addTopping(Topping topping, List<Topping> toppings) {
     toppings.add(topping);
   }
 
