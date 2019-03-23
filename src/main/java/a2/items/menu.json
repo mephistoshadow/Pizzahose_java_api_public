@@ -1,0 +1,31 @@
+{
+  "Pizza":{
+    "pepperoni large":10,
+    "pepperoni small":10,
+    "margherita large":10,
+    "margherita small":5,
+    "vegetarian large":10,
+    "vegetarian small":5,
+    "Neapolitan large":10,
+    "Neapolitan small":5
+  },
+  "Drink":{
+    "Coke":1,
+    "Diet Coke":1,
+    "Coke Zero":1,
+    "Pepsi":1,
+    "Diet Pepsi":1,
+    "Dr. Pepper":1,
+    "Water":1,
+    "Juice":2
+  },
+  "Topping":{
+    "olives":1,
+    "tomatoes":1,
+    "mushrooms":1,
+    "jalapenos":1,
+    "chicken":1,
+    "beef":1,
+    "pepperoni":1
+  }
+}
