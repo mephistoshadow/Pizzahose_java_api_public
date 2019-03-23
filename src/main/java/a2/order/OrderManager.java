@@ -2,6 +2,7 @@ package a2.order;
 
 import a2.Pizza.Pizza;
 import a2.drink.Drink;
+import a2.topping.Topping;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class OrderManager {
   }
 
   public void cancelOrder(int id) {
-    for (int i = 0; i < this.orderList.size(); i ++) {
+    for (int i = 0; i < this.orderList.size(); i++) {
       if (this.orderList.get(i).getId() == id) {
         this.orderList.remove(i);
       }
@@ -27,6 +28,15 @@ public class OrderManager {
     return this.orderList;
   }
 
+  public Order getOrder(int id) {
+    for (Order anOrderList : this.orderList) {
+      if (anOrderList.getId() == id) {
+        return anOrderList;
+      }
+    }
+    return null;
+  }
+
   public void addOrderPizza(int id, Pizza pizza) {
     for (Order o : orderList) {
       if (o.getId() == id) {
@@ -35,10 +45,16 @@ public class OrderManager {
     }
   }
 
-  public void deleteOrderPizza(int id) {
+  public void deleteOrderPizza(int id,String pizza) {
     for (Order o : orderList) {
       if (o.getId() == id) {
-        o.getPizza().clear();
+        for (int i = 0; i < o.getPizza().size(); i++) {
+          if (o.getPizza().get(i).getName().equalsIgnoreCase(pizza)) {
+            o.getPizza().remove(i);
+            break;
+          }
+
+        }
       }
     }
   }
@@ -51,12 +67,60 @@ public class OrderManager {
     }
   }
 
-  public void deleteOrderDrink(int id, Drink drink) {
+  public void deleteOrderDrink(int id, String drink) {
     for (Order o : orderList) {
       if (o.getId() == id) {
-        o.getDrinks().remove(drink);
+        for (int i = 0; i < o.getDrinks().size(); i++) {
+          if (o.getDrinks().get(i).getName().equalsIgnoreCase(drink)) {
+              o.getDrinks().remove(i);
+            break;
+          }
+
+        }
       }
     }
+  }
+
+  public void addOrderTopping(int id, String pizza,Topping topping) {
+    for (Order o : orderList) {
+      if (o.getId() == id) {
+        for (int i = 0; i < o.getPizza().size(); i++) {
+          if (o.getPizza().get(i).getName().equalsIgnoreCase(pizza)) {
+            o.getPizza().get(i).addTopping(topping);
+            break;
+          }
+
+        }
+      }
+    }
+  }
+
+  public void deleteOrderTopping(int id, String pizza,String topping) {
+    for (Order o : orderList) {
+      if (o.getId() == id) {
+        for (int i = 0; i < o.getPizza().size(); i++) {
+          if (o.getPizza().get(i).getName().equalsIgnoreCase(pizza)) {
+            for(int j = 0; j < o.getPizza().get(i).getToppings().size(); j ++) {
+              if(o.getPizza().get(i).getToppings().get(j).getName().equalsIgnoreCase(topping)) {
+                o.getPizza().get(i).getToppings().remove(j);
+                break;
+              }
+            }
+            break;
+          }
+
+        }
+      }
+    }
+  }
+
+  public double getSepcificPrice(int id) {
+    for (Order o : orderList) {
+      if (o.getId() == id) {
+        return o.calculatePrice();
+      }
+    }
+    return 0.0;
   }
 
 

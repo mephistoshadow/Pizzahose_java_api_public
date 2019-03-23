@@ -8,7 +8,7 @@ public class Olives implements Topping {
 
   public Olives() {
     this.name = "Olives";
-    this.price = 1.2;
+    this.price = 1.9;
   }
 
   public double getPrice() {

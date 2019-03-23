@@ -22,6 +22,9 @@ public class Vegetarian extends Pizza {
   public double getPrice() {
     return price;
   }
+  public List<Topping> getToppings() {
+    return this.toppings;
+  }
 
   public void setPrice(double price) {
     this.price = price;
