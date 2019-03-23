@@ -1,11 +1,12 @@
 package a2.drink;
 
 
-public class DietPepsi implements Drink{
+public class DietPepsi implements Drink {
+
   private String name;
   private double price;
 
-  public DietPepsi(){
+  public DietPepsi() {
     this.name = "DietPepsi";
     this.price = 1.2;
   }

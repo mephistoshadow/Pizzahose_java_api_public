@@ -1,6 +1,7 @@
 package a2.Pizza;
 
-public class PizzaFactory{
+public class PizzaFactory {
+
   public Pizza getPizza(String name) {
     if (name.equalsIgnoreCase("pepperoni")) {
       return new Pepperoni();

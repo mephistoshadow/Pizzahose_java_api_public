@@ -1,11 +1,12 @@
 package a2.topping;
 
 
-public class Pepperoni implements Topping{
+public class Pepperoni implements Topping {
+
   private String name;
   private double price;
 
-  public Pepperoni(){
+  public Pepperoni() {
     this.name = "Pepperoni";
     this.price = 0.6;
   }

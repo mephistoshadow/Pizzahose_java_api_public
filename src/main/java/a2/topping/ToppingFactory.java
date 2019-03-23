@@ -2,7 +2,8 @@ package a2.topping;
 
 
 public class ToppingFactory {
-  public Topping getTopping (String name) {
+
+  public Topping getTopping(String name) {
     if (name.equalsIgnoreCase("olives")) {
       return new Olives();
     } else if (name.equalsIgnoreCase("tomatoes")) {
@@ -11,11 +12,11 @@ public class ToppingFactory {
       return new Mushroom();
     } else if (name.equalsIgnoreCase("jalapenos")) {
       return new Jalapenos();
-    }else if (name.equalsIgnoreCase("chicken")) {
+    } else if (name.equalsIgnoreCase("chicken")) {
       return new Chicken();
-    }else if (name.equalsIgnoreCase("beef")) {
+    } else if (name.equalsIgnoreCase("beef")) {
       return new Beef();
-    }else if (name.equalsIgnoreCase("pepperoni")) {
+    } else if (name.equalsIgnoreCase("pepperoni")) {
       return new Pepperoni();
     }
     return null;

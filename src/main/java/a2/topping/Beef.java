@@ -1,11 +1,12 @@
 package a2.topping;
 
 
-public class Beef implements Topping{
+public class Beef implements Topping {
+
   private String name;
   private double price;
 
-  public Beef(){
+  public Beef() {
     this.name = "Beef";
     this.price = 0.2;
   }
