@@ -17,28 +17,53 @@ public class PizzaParlour {
         PizzaFactory p = new PizzaFactory();
         DrinkFactory d = new DrinkFactory();
         ToppingFactory t= new ToppingFactory();
+        int countOrder = 0;
 
 
         Scanner scanner = new Scanner(System.in);
         while(true) {
+          System.out.println("What can I do for you");
+          System.out.print("Submit a new order  /");
+          System.out.print("Update existing order  /");
+          System.out.print("cancel order   " + '\n' + '\n');
+          System.out.println("type Submit/update/cancel to command the system");
             String options = scanner.nextLine();
-            if(options.equals("new")) {
-                Order a = new Order(1);
+            if(options.equals("Submit")) {
+                Order a = new Order(0);
+                System.out.println("Please enter the type of Pizza you want");
                 String pizza = scanner.nextLine();
                 Pizza c = p.getPizza(pizza);
-                System.out.println("succs add pizza");
-                String topping = scanner.nextLine();
-                c.addTopping(t.getTopping(topping));
-              System.out.println("succs add topping");
+                System.out.println("success add a pizza");
+                while(true) {
+                  System.out.println("Choose the topping you like, enter exit to finish");
+                  String topping = scanner.nextLine();
+                  if(!topping.equals("exit")) {
+                    c.addTopping(t.getTopping(topping));
+                    System.out.println("succs add topping");
+                  }else{
+                    break;
+                  }
+
+                }
+              while(true) {
+                System.out.println("Choose the drink you like, enter exit to finish");
                 String drink = scanner.nextLine();
-                Drink drinks = d.getDrink(drink);
-              System.out.println("succs add drink");
-                a.addDrink(drinks);
-                a.addPizza(c);
-              System.out.println(a.getDrinks().toString());
+                if(!drink.equals("exit")) {
+                  Drink drinks = d.getDrink(drink);
+                  a.addDrink(drinks);
+                  System.out.println("success add one drink");
+                }else{
+                  break;
+                }
+              }
+              a.addPizza(c);
+              System.out.println("your order is done" + '\n' + '\n');
+
 
 
             }
+
+          countOrder++;
         }
 
     }
