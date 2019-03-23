@@ -5,10 +5,6 @@ import a2.drink.Drink;
 import java.util.ArrayList;
 import java.util.List;
 
-
-/**
- * Created by melo45 on 2019-03-21.
- */
 public class OrderManager {
 
   private List<Order> orderList = new ArrayList<Order>();
@@ -19,9 +15,9 @@ public class OrderManager {
   }
 
   public void cancelOrder(int id) {
-    for (Order o : orderList) {
-      if (o.getId() == id) {
-        this.orderList.remove(o);
+    for (int i = 0; i < this.orderList.size(); i ++) {
+      if (this.orderList.get(i).getId() == id) {
+        this.orderList.remove(i);
       }
     }
 
