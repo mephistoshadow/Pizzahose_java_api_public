@@ -17,7 +17,7 @@ public interface Pizza {
 
   String getName();
 
-  void addTopping(Topping topping, List<Topping> toppings);
+  void addTopping(Topping topping);
 
   void preparation();
 

@@ -33,8 +33,8 @@ public class Pepperoni implements Pizza {
   public String getName() {
     return this.name;
   }
-  public void addTopping(Topping topping, List<Topping> toppings) {
-    toppings.add(topping);
+  public void addTopping(Topping topping) {
+    this.toppings.add(topping);
   }
 
   public void preparation() {
