@@ -1,8 +1,6 @@
 package a2.drink;
 
-/**
- * Created by melo45 on 2019-03-22.
- */
+
 public class Pepsi implements Drink {
   private String name;
   private double price;

@@ -1,8 +1,6 @@
 package a2.topping;
 
-/**
- * Created by melo45 on 2019-03-22.
- */
+
 public class Mushroom implements Topping{
   private String name;
   private double price;

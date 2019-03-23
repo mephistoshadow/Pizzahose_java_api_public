@@ -33,6 +33,7 @@ public class PizzaParlour {
                 System.out.println("Please enter the type of Pizza you want");
                 String pizza = scanner.nextLine();
                 Pizza c = p.getPizza(pizza);
+                System.out.println(c.getName());
                 System.out.println("success add a pizza");
                 while(true) {
                   System.out.println("Choose the topping you like, enter exit to finish");
