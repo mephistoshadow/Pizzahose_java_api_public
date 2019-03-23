@@ -24,7 +24,6 @@ public class Menu {
 
     public Menu( String priceFILE){
         filePath=priceFILE;
-        BufferedReader br = null;
         JSONParser parser = new JSONParser();
         //parse the json object to the hashmap
         try {
@@ -178,7 +177,7 @@ public class Menu {
         System.out.println("Welcome to 301 Pizza!: ");
         Menu menu=new Menu("/Users/yufei/Desktop/2019winter/CSC301/assignment/pair49-yangsiq1-yangyu35/src/main/java/a2/items/menu.json");
         menu.getMenu();
-        
+
     }
 
 
