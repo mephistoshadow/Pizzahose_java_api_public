@@ -13,11 +13,12 @@ public class  Delivery {
         this.Address = address;
     }
 
-    public void setNumber(String address, String details, int number){
+    public void setNumber(int number){
+
         this.Number = number;
     }
 
-    public int GetOrderNumber(){
+    public int getOrderNumber(){
         return Number;
 
     }
@@ -30,12 +31,15 @@ public class  Delivery {
         this.Address = Address;
     }
 
-    public String GetOrderAddress(){
+    public String getOrderAddress(){
         return Address;
 
     }
-    public String GetOrdeDetail(){
+    public String getOrdeDetail(){
         return Details;
+
+    }
+    public void saveOrderDetail(){
 
     }
 

@@ -1,5 +1,6 @@
 package a2.items;
 
+import a2.Pizza.Pizza;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -92,8 +93,9 @@ public class Menu {
         }
 
     }
-    public Double getPizzaPrice(String item){
+    public Double getPizzaPrice(String item, Pizza p){
         Double price=Pizzas.get(item);
+        p.setPrice(price);
         return price;
 
     }

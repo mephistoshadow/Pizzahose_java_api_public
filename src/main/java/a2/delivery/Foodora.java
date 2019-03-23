@@ -19,14 +19,13 @@ public class Foodora extends Delivery{
         super(address, details,number);
     }
 
-    public void saveOrderDetail(int orderNum){
+    public void saveOrderDetail(){
         //read from csv file
-        String filePath=System.getProperty("user.dir")+String.valueOf(orderNum)+".csv";
+        String filePath=System.getProperty("user.dir")+String.valueOf(Number)+".csv";
         File file = new File(filePath);
         try {
             // create FileWriter object with file as parameter
             FileWriter outputfile = new FileWriter(file);
-
             // create CSVWriter object filewriter object as parameter
             CSVWriter writer = new CSVWriter(outputfile);
 

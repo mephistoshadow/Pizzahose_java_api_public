@@ -1,5 +1,6 @@
 package a2.main;
 
+import a2.delivery.DeliveryFactory;
 import a2.Pizza.Pizza;
 import a2.Pizza.PizzaFactory;
 import a2.drink.Drink;
@@ -90,6 +91,20 @@ public class PizzaParlour {
         System.out.println("Please enter the order number you want to update");
 
       }
+      //choose delivery
+      System.out.println("Delivery or Pickup");
+      String command = scanner.nextLine();
+      if(command=="Delivery"){
+        //delivery food and choose delivery method:
+        DeliveryFactory ubereat=new DeliveryFactory();
+        System.out.println("Choose the kind of delivery method? Ubereat/Foodora/PizzaPalour");
+        String delivery_method = scanner.nextLine();
+        System.out.println("Please type your address that you want to deliver to:");
+        String address = scanner.nextLine();
+        ubereat.SetDelivery("Ubereat","home","coke",1);
+      }
+
+
 
     }
 
