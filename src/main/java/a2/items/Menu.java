@@ -23,7 +23,6 @@ public class Menu {
     private HashMap<String, Double> Drinks = new HashMap<String, Double>();
     private HashMap<String, Double> Pizzas = new HashMap<String, Double>();
     private HashMap<String, Double> Toppings = new HashMap<String, Double>();
-    private String fullMenu="";
     private String filePath="";
 
 
@@ -32,7 +31,6 @@ public class Menu {
         BufferedReader br = null;
         JSONParser parser = new JSONParser();
         try {
-
             Object obj = parser.parse(new FileReader(priceFILE));
             JSONObject jsonObject = (JSONObject) obj;
             JSONObject DrinkJson = (JSONObject) jsonObject.get("Drink");
@@ -44,9 +42,7 @@ public class Menu {
                 Long priceL=(Long) DrinkJson.get(name);
                 double price = priceL.doubleValue();
                 Drinks.put(name, price);
-
             }
-
             JSONObject  PizzaJson = (JSONObject) jsonObject.get("Pizza");
             Set keysP  = PizzaJson.keySet();
             Iterator<String> iteraterP=keysP.iterator();
@@ -55,7 +51,6 @@ public class Menu {
                 Long priceL=(Long) PizzaJson.get(name);
                 double price = priceL.doubleValue();
                 Pizzas.put(name, price);
-
 
             }
 
