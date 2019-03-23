@@ -1,12 +1,13 @@
 package a2.Pizza;
 import a2.topping.Topping;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by melo45 on 2019-03-22.
  */
 public class Neapolitan implements Pizza{
-  private List<Topping> toppings;
+  private List<Topping> toppings = new ArrayList<Topping>();
   private String size;
   private String name;
   private double price;
@@ -33,8 +34,8 @@ public class Neapolitan implements Pizza{
   public String getName() {
     return this.name;
   }
-  public void addTopping(Topping topping, List<Topping> toppings) {
-    toppings.add(topping);
+  public void addTopping(Topping topping) {
+    this.toppings.add(topping);
   }
 
   public void preparation() {
