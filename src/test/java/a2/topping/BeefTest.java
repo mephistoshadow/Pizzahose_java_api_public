@@ -10,7 +10,7 @@ import org.junit.Test;
 public class BeefTest {
 
   @Test
-  public void TestAllMethod() throws Exception {
+  public void TestAllGetAndSet() throws Exception {
     Beef drink = new Beef();
     drink.setName("Beef");
     drink.setPrice(12);

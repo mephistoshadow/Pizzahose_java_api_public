@@ -11,7 +11,7 @@ import org.junit.Test;
 public class OlivesTest {
 
   @Test
-  public void TestAllMethod() throws Exception {
+  public void TestAllGetAndSet() throws Exception {
     Olives drink = new Olives();
     drink.setName("Beef");
     drink.setPrice(12);

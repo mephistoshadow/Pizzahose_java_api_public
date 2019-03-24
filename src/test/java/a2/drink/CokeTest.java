@@ -14,7 +14,7 @@ public class CokeTest {
 
 
   @Test
-  public void TestAllMethod() throws Exception {
+  public void TestAllGetAndSet() throws Exception {
     Coke coke = new Coke();
     coke.setName("coke");
     coke.setPrice(12);

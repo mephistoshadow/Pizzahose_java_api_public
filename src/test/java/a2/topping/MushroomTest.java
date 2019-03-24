@@ -11,7 +11,7 @@ import org.junit.Test;
 public class MushroomTest {
 
   @Test
-  public void TestAllMethod() throws Exception {
+  public void TestAllGetAndSet() throws Exception {
     Mushroom drink = new Mushroom();
     drink.setName("Beef");
     drink.setPrice(12);

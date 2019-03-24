@@ -20,7 +20,7 @@ import org.junit.Test;
 public class ToppingFactoryTest {
 
   @Test
-  public void TestAllMethod() throws Exception {
+  public void TestAllGetAndSet() throws Exception {
     ToppingFactory Topping = new ToppingFactory();
     assertTrue(Topping.getTopping("Beef") instanceof Beef);
     assertTrue(Topping.getTopping("Chicken") instanceof Chicken);

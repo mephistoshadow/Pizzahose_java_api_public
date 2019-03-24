@@ -11,7 +11,7 @@ import org.junit.Test;
 public class DietPepsiTest {
 
   @Test
-  public void TestAllMethod() throws Exception {
+  public void TestAllGetAndSet() throws Exception {
     DietPepsi drink = new DietPepsi();
     drink.setName("coke");
     drink.setPrice(12);

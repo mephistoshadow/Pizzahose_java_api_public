@@ -12,7 +12,7 @@ import org.junit.Test;
 public class DietCokeTest {
 
   @Test
-  public void TestAllMethod() throws Exception {
+  public void TestAllGetAndSet() throws Exception {
     DietCoke drink = new DietCoke();
     drink.setName("coke");
     drink.setPrice(12);
