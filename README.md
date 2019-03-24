@@ -37,6 +37,7 @@ Using the main function, the user can achieve the following by typing Submit/upd
 More instruction is typed in the main function. follow instructions that is printed out in the console.
 The default menu and price is saved in a menu.json file, which can be changed later using functions in the menu class.
 
+Tools: intellij 
 
 Design pattern:
 1. factory design pattern:pizza factory,Drink factory, delivery factory
