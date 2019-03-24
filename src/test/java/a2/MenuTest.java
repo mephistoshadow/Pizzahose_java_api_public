@@ -23,7 +23,7 @@ import java.util.Set;
 public class MenuTest {
     @Test
     public void testSetFilePath() {
-        System.out.println(System.getProperty("user.dir")+"/menu.json");
+
         Menu df=new Menu(System.getProperty("user.dir")+"/menu.json");
 
         df.setFile(System.getProperty("user.dir")+"/menu.json");
