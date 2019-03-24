@@ -2,6 +2,7 @@ package a2.main;
 
 import a2.Pizza.Pizza;
 import a2.Pizza.PizzaFactory;
+import a2.delivery.DeliveryFactory;
 import a2.drink.Drink;
 import a2.drink.DrinkFactory;
 import a2.items.Menu;
@@ -9,7 +10,10 @@ import a2.order.Order;
 import a2.order.OrderManager;
 import a2.topping.Topping;
 import a2.topping.ToppingFactory;
+
+import java.util.List;
 import java.util.Scanner;
+import a2.delivery.*;
 
 public class PizzaParlour {
 
@@ -19,6 +23,7 @@ public class PizzaParlour {
     PizzaFactory p = new PizzaFactory();
     DrinkFactory d = new DrinkFactory();
     ToppingFactory t = new ToppingFactory();
+    DeliveryFactory Delivery = new DeliveryFactory();
     OrderManager orderManager = new OrderManager();
     int countOrder = 0;
     String path = System.getProperty("user.dir") +"/menu.json";
@@ -202,6 +207,25 @@ public class PizzaParlour {
           }
 
         }
+      }
+      else if (options.equalsIgnoreCase("delivery")){
+        System.out.println(
+                "choose you delivery method:Ubereat/Foodora/PizzaPalour");
+        String method = scanner.nextLine();
+        System.out.println(
+                "Please type in your address");
+        String address = scanner.nextLine();
+        List<Order> orders=orderManager.getOrderList();
+        String details="";
+        for (int i = 0; i < orders.size(); i++) {
+          if (orders.get(i).getId() == countOrder) {
+            orders.get(i).getPizza();
+
+          }
+        }
+        Delivery.SetDelivery( method, address,  details, countOrder);
+
+
       }
 
     }

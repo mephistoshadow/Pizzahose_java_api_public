@@ -5,7 +5,10 @@ import a2.delivery.*;
 import org.junit.Assert;
 import org.junit.Test;
 import java.io.*;
-
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 
 public class DeliveryTest {
@@ -66,7 +69,6 @@ public class DeliveryTest {
         Delivery d1 = df.SetDelivery("Foodora", "home", "coke", 1);
         System.out.println(d1.getOrderNumber());
         d1.saveOrderDetail();
-        String details = "Address:\n" + "Order Details:\n" + "Order Number:";
         System.out.println(System.getProperty("user.dir"));
 
         File file = new File(System.getProperty("user.dir")+"/1.csv");
@@ -91,6 +93,35 @@ public class DeliveryTest {
 
     @Test
     public void testSaveUbereat() {
+        DeliveryFactory df = new DeliveryFactory();
+        Delivery d1 = df.SetDelivery("Ubereat", "home", "coke", 1);
+        System.out.println(d1.getOrderNumber());
+        d1.saveOrderDetail();
+        System.out.println(System.getProperty("user.dir"));
+
+        File file = new File(System.getProperty("user.dir")+"/1.json");
+        JSONParser jsonParser = new JSONParser();
+        String detail="";
+        try {
+            FileReader reader = new FileReader(file);
+            //Read JSON file
+            JSONObject obj =(JSONObject) jsonParser.parse(reader);
+            String address=(String) obj.get("Address:");
+            String Details=(String) obj.get("Order Details:");
+            Long number=(Long) obj.get("Order Number:");
+            int num=number.intValue();
+            detail=address+Details+num;
+            System.out.println(detail);
+            Assert.assertEquals(detail,"homecoke1");
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
 
     }
