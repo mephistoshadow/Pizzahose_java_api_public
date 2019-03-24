@@ -81,7 +81,7 @@ public class MenuTest {
     @Test
     public void testSaveMenu() {
         Menu df=new Menu(System.getProperty("user.dir")+"/menu.json");
-        df.SaveMenu();
+        df.saveMenu();
         File file = new File(System.getProperty("user.dir")+"/menu.json");
         JSONParser jsonParser = new JSONParser();
         String detail="";

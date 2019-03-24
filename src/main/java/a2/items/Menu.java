@@ -126,7 +126,7 @@ public class Menu {
 
     }
 
-    public void SaveMenu(){
+    public void saveMenu(){
         JSONObject obj = new JSONObject();
         //convert drink hashmap to json
         JSONObject Drink = new JSONObject();
