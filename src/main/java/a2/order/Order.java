@@ -4,7 +4,9 @@ import a2.Pizza.Pizza;
 import a2.drink.Drink;
 import a2.topping.Topping;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Order {
 
@@ -49,6 +51,28 @@ public class Order {
   public int getId() {
     return this.orderNumber;
   }
+
+  public String printPizzaAndTopping() {
+    String printPandT = "";
+    for (Pizza o : this.pizzas) {
+      printPandT = printPandT + o.getName() + '\n' + "Toppings : ";
+      for(Topping t : o.getToppings()) {
+        printPandT = printPandT + t.getName() + " ";
+      }
+      printPandT = printPandT + '\n';
+    }
+    printPandT = printPandT + '\n' + "Drinks : ";
+    String printD = "";
+    for (Drink o : this.drinks) {
+      printD = printD + o.getName() + " ";
+    }
+    printPandT = printPandT + printD;
+    return printPandT;
+  }
+
+
+
+
 
 
 }

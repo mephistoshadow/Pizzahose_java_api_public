@@ -5,6 +5,8 @@ import a2.Pizza.PizzaFactory;
 import a2.delivery.DeliveryFactory;
 import a2.drink.Drink;
 import a2.drink.DrinkFactory;
+import a2.delivery.DeliveryFactory;
+import a2.delivery.*;
 import a2.items.Menu;
 import a2.order.Order;
 import a2.order.OrderManager;
@@ -85,7 +87,6 @@ public class PizzaParlour {
             Drink drinks = d.getDrink(drink);
             menu.getDrinkPrice(drink,drinks);
             order.addDrink(drinks);
-            System.out.println("success added one drink" + '\n');
           } else {
             break;
           }
@@ -95,6 +96,7 @@ public class PizzaParlour {
         System.out.println("total price is " + price + '\n');
         countOrder++;
         orderManager.addOrderToList(order);
+        System.out.print(order.printPizzaAndTopping());
       } else if (options.equalsIgnoreCase("Cancel")) {
         System.out.println("Please enter the order number to cancel the order");
         String id = scanner.nextLine();
@@ -209,22 +211,19 @@ public class PizzaParlour {
         }
       }
       else if (options.equalsIgnoreCase("delivery")){
-        System.out.println(
-                "choose you delivery method:Ubereat/Foodora/PizzaPalour");
-        String method = scanner.nextLine();
-        System.out.println(
-                "Please type in your address");
-        String address = scanner.nextLine();
-        List<Order> orders=orderManager.getOrderList();
-        String details="";
-        for (int i = 0; i < orders.size(); i++) {
-          if (orders.get(i).getId() == countOrder) {
-            orders.get(i).getPizza();
-
+          System.out.println("choose you delivery method:Ubereat/Foodora/PizzaPalour");
+          String method = scanner.nextLine();
+          System.out.println(
+                             "Please type in your address");
+          String address = scanner.nextLine();
+          List<Order> orders=orderManager.getOrderList();
+          String details="";
+          for (int i = 0; i < orders.size(); i++) {
+              if (orders.get(i).getId() == countOrder) {
+                  orders.get(i).getPizza();
+              }
           }
-        }
-        Delivery.SetDelivery( method, address,  details, countOrder);
-
+          Delivery.SetDelivery( method, address,  details, countOrder);
 
       }
 
