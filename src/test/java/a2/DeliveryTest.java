@@ -113,8 +113,7 @@ public class DeliveryTest {
             detail=address+Details+num;
             System.out.println(detail);
             Assert.assertEquals(detail,"homecoke1");
-
-
+            
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -125,7 +124,5 @@ public class DeliveryTest {
 
 
     }
-
-    
 
 }
