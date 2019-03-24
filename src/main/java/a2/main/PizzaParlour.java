@@ -21,7 +21,7 @@ public class PizzaParlour {
     ToppingFactory t = new ToppingFactory();
     OrderManager orderManager = new OrderManager();
     int countOrder = 0;
-    String path = "/Users/melo45/desktop/301A2/pair49-yangsiq1-yangyu35/menu.json";
+    String path = System.getProperty("user.dir") +"/menu.json";
     Menu menu = new Menu(path);
 
     Scanner scanner = new Scanner(System.in);
@@ -40,7 +40,7 @@ public class PizzaParlour {
           String pizza = scanner.nextLine();
           Pizza pizza_w = p.getPizza(pizza);
           System.out.println("what size you want" + '\n');
-          System.out.println("large / small" + '\n');
+          System.out.println("large / small");
           String size = scanner.nextLine();
           String item = pizza + " " + size;
           pizza_w.setSize(size);
@@ -159,7 +159,7 @@ public class PizzaParlour {
                 String pizza = scanner.nextLine();
                 Pizza pizza_new = p.getPizza(pizza);
                 System.out.println("what size you want" + '\n');
-                System.out.println("large / small" + '\n');
+                System.out.println("large / small");
                 String size = scanner.nextLine();
                 String item = pizza + " " + size;
                 pizza_new.setSize(size);
