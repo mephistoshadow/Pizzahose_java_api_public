@@ -7,7 +7,7 @@ public class DeliveryFactory {
             } else if (name.equalsIgnoreCase("Foodora")) {
                 return new Foodora(address,  details,  number);
             } else if (name.equalsIgnoreCase("PizzaPalour")) {
-                return new PizzaPalour(address,  details,  number);
+                return new Delivery(address,  details,  number);
             }
             return null;
         }

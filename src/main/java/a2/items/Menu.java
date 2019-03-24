@@ -39,7 +39,7 @@ public class Menu {
             //set drinks
             while (iteraterD.hasNext()){
                 String name =iteraterD.next();
-                Long priceL=(Long) DrinkJson.get(name);
+                Double priceL=(Double) DrinkJson.get(name);
                 double price = priceL.doubleValue();
                 Drinks.put(name, price);
             }
@@ -49,8 +49,7 @@ public class Menu {
             //set pizza
             while (iteraterP.hasNext()){
                 String name =iteraterP.next();
-                Long priceL=(Long) PizzaJson.get(name);
-                double price = priceL.doubleValue();
+                Double price=(Double) PizzaJson.get(name);
                 Pizzas.put(name, price);
 
             }
@@ -60,8 +59,7 @@ public class Menu {
             Iterator<String> iteraterT=keysT.iterator();
             while (iteraterT.hasNext()){
                 String name =iteraterT.next();
-                Long priceL=(Long) ToppingJson.get(name);
-                double price = priceL.doubleValue();
+                Double price=(Double) ToppingJson.get(name);
                 Toppings.put(name, price);
             }
 
@@ -74,11 +72,7 @@ public class Menu {
         }
 
     }
-    //save the json file that persist the data
-    public void setFilePath(String filePath){
-        this.filePath=filePath;
 
-    }
     // change pizza price
     public void changePizzaPrice(String item, Double price){
         Pizzas.put(item,price);
@@ -178,13 +172,6 @@ public class Menu {
 
     }
 
-    public static void main(String[] args) {
-
-        System.out.println("Welcome to 301 Pizza!: ");
-        Menu menu=new Menu("/Users/yufei/Desktop/2019winter/CSC301/assignment/pair49-yangsiq1-yangyu35/src/main/java/a2/items/menu.json");
-        menu.getMenu();
-
-    }
 
 
 }
