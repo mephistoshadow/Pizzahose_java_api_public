@@ -33,11 +33,11 @@ public class PizzaParlour {
 
     Scanner scanner = new Scanner(System.in);
     while (true) {
-      System.out.println("What can I do for you");
+      System.out.println("What can I do for you" + '\n');
       System.out.print("Submit a new order  /");
       System.out.print("Update existing order  /");
       System.out.print("cancel order   " + '\n' + '\n');
-      System.out.println("type Submit/update/cancel/delivery/Menu/Price to command the system");
+      System.out.println("type Submit /update /cancel /delivery /Menu /Price to command the system");
       String options = scanner.nextLine();
       if (options.equalsIgnoreCase("Submit")) {
         Order order = new Order(countOrder);
@@ -69,7 +69,7 @@ public class PizzaParlour {
 
           }
           order.addPizza(pizza_w);
-          System.out.println("Done! type continue to add one more, type exit to add drink ");
+          System.out.println("Done! type continue to add one more pizza, type exit to add drink ");
           String command = scanner.nextLine();
           if (command.equalsIgnoreCase("exit")) {
             break;
@@ -96,7 +96,8 @@ public class PizzaParlour {
         System.out.println("total price is " + price + '\n');
         countOrder++;
         orderManager.addOrderToList(order);
-        System.out.print(order.printPizzaAndTopping());
+        System.out.println("Order detail is");
+        System.out.println(order.printPizzaAndTopping()+ '\n');
       } else if (options.equalsIgnoreCase("Cancel")) {
         System.out.println("Please enter the order number to cancel the order");
         String id = scanner.nextLine();
@@ -128,7 +129,7 @@ public class PizzaParlour {
                 String pizza = scanner.nextLine();
                 orderManager.deleteOrderPizza(id_real, pizza);
                 System.out
-                    .println("now the price is" + orderManager.getSepcificPrice(id_real) + '\n');
+                    .println("now the price is " + orderManager.getSepcificPrice(id_real) + '\n');
                 System.out.println("successfully delete the order's pizza" + '\n');
               } else if (option.equalsIgnoreCase("drinks")) {
                 System.out.println("what drink you want to delete" + '\n');
