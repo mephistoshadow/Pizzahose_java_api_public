@@ -2,6 +2,7 @@ package a2.main;
 
 import a2.Pizza.Pizza;
 import a2.Pizza.PizzaFactory;
+import a2.delivery.DeliveryFactory;
 import a2.drink.Drink;
 import a2.drink.DrinkFactory;
 import a2.delivery.DeliveryFactory;
@@ -11,7 +12,10 @@ import a2.order.Order;
 import a2.order.OrderManager;
 import a2.topping.Topping;
 import a2.topping.ToppingFactory;
+
+import java.util.List;
 import java.util.Scanner;
+import a2.delivery.*;
 
 public class PizzaParlour {
 
@@ -33,7 +37,7 @@ public class PizzaParlour {
       System.out.print("Submit a new order  /");
       System.out.print("Update existing order  /");
       System.out.print("cancel order   " + '\n' + '\n');
-      System.out.println("type Submit/update/cancel to command the system");
+      System.out.println("type Submit/update/cancel/delivery to command the system");
       String options = scanner.nextLine();
       if (options.equalsIgnoreCase("Submit")) {
         Order order = new Order(countOrder);
@@ -209,20 +213,19 @@ public class PizzaParlour {
       else if (options.equalsIgnoreCase("delivery")){
           System.out.println("choose you delivery method:Ubereat/Foodora/PizzaPalour");
           String method = scanner.nextLine();
-          System.out.println(
-                             "Please type in your address");
+          System.out.println("Please type in your address");
           String address = scanner.nextLine();
           List<Order> orders=orderManager.getOrderList();
           String details="";
           for (int i = 0; i < orders.size(); i++) {
-              if (orders.get(i).getId() == countOrder) {
+              if (orders.get(i).getId() == countOrder-1) {
                   orders.get(i).getPizza();
-                  
+                  details=orders.get(i).printPizzaAndTopping();
+                  System.out.println(details);
               }
           }
-          Delivery.SetDelivery( method, address,  details, countOrder);
-          
-          
+          Delivery deliver=Delivery.SetDelivery( method, address,  details, countOrder);
+          deliver.saveOrderDetail();
       }
 
     }

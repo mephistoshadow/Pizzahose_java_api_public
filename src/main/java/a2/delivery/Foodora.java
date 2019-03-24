@@ -10,18 +10,18 @@ import com.opencsv.CSVWriter;
 
 
 public class Foodora extends Delivery{
-    private String Address;
-    private String Details;
-    private int Number;
+
 
     public Foodora(String address, String details, int number){
         // explicit call to superclass' parameterized constructor
         super(address, details,number);
     }
-
+    @Override
     public void saveOrderDetail(){
         //read from csv file
-        String filePath=System.getProperty("user.dir")+String.valueOf(Number)+".csv";
+        int number=getOrderNumber();
+        String filePath=System.getProperty("user.dir")+"/"+number+".csv";
+        System.out.println(filePath);
         File file = new File(filePath);
         try {
             // create FileWriter object with file as parameter
@@ -30,14 +30,15 @@ public class Foodora extends Delivery{
             CSVWriter writer = new CSVWriter(outputfile);
 
             // add data to csv
-            String[] data1 = { "Address:",Address};
+            String address=getOrderAddress();
+            String[] data1 = { "Address:",address};
+            System.out.println(address);
             writer.writeNext(data1);
+            String Details=getOrdeDetail();
             String[] data2 = { "Order Details:", Details };
             writer.writeNext(data2);
-
-            String[] data3 = { "Order Number:", String.valueOf(Number)};
+            String[] data3 = { "Order Number:", Integer.toString(number)};
             writer.writeNext(data3);
-
             // closing writer connection
             writer.close();
         }
