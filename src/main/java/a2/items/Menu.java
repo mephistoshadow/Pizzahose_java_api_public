@@ -1,6 +1,8 @@
 package a2.items;
 
 import a2.Pizza.Pizza;
+import a2.drink.Drink;
+import a2.topping.Topping;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -112,8 +114,9 @@ public class Menu {
         Toppings.put(item,price);
 
     }
-    public Double getToppingPrice(String item){
+    public Double getToppingPrice(String item, Topping t){
         Double price=Toppings.get(item);
+        t.setPrice(price);
         return price;
 
     }
@@ -122,8 +125,9 @@ public class Menu {
         Drinks.put(item,price);
 
     }
-    public Double getDrinkPrice(String item){
+    public Double getDrinkPrice(String item,Drink d){
         Double price=Drinks.get(item);
+        d.setPrice(price);
         return price;
 
     }
