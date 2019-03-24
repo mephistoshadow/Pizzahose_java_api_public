@@ -25,11 +25,7 @@ Disliked about the process is that we spend a lot of time convincing each other 
 How to use the API:
 Using the main function, the user can achieve the following by typing Submit/update/cancel/delivery/Menu/Price:
 
-<<<<<<< HEAD
 1.Submit: submit a order, which allow user to order pizzas, drinks, and toppings please note here, we provide the instrction for user how to use it, follow the exact same instrction as provided.
-=======
-1.Submit: submit an order, which allows users to order pizzas, drinks, and toppings
->>>>>>> 12b23389fabcca27968aa692899a88634ec50cd9
 
 2.update: update an order
 
