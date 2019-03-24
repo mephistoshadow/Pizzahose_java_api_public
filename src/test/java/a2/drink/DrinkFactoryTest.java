@@ -2,6 +2,7 @@ package a2.drink;
 
 import static org.junit.Assert.*;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,12 +11,18 @@ import org.junit.Test;
  */
 public class DrinkFactoryTest {
 
-  @Before
-  public void setUp() throws Exception {
-  }
-
   @Test
-  public void getDrink() throws Exception {
+  public void TestAllMethod() throws Exception {
+    DrinkFactory drinkF = new DrinkFactory();
+    assertTrue(drinkF.getDrink("coke") instanceof Coke);
+    assertTrue(drinkF.getDrink("Diet Coke") instanceof DietCoke);
+    assertTrue(drinkF.getDrink("Coke Zero") instanceof CokeZero);
+    assertTrue(drinkF.getDrink("Pepsi") instanceof Pepsi);
+    assertTrue(drinkF.getDrink("Diet Pepsi") instanceof DietPepsi);
+    assertTrue(drinkF.getDrink("Dr. Pepper") instanceof DrPepper);
+    assertTrue(drinkF.getDrink("Water") instanceof Water);
+    assertTrue(drinkF.getDrink("Juice") instanceof Juice);
+
   }
 
 }
