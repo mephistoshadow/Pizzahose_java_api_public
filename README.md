@@ -25,7 +25,7 @@ Disliked about the process is that we spend a lot of time convince each other ab
 How to use the Api:
 Using the main function, the user can achieve the following by typing Submit/update/cancel/delivery/Menu/Price:
 
-1.Submit: submit a order, which allow user to order pizzas, drinks, and toppings
+1.Submit: submit a order, which allow user to order pizzas, drinks, and toppings please note here, we provide the instrction for user how to use it, follow the exact same instrction as provided.
 
 2.update: update a order
 
@@ -43,5 +43,15 @@ The default menu and price is saved in a menu.json file, which can be changed la
 Tools: intellij 
 
 Design pattern:
-1. factory design pattern:pizza factory,Drink factory, delivery factory
+1.Factory design pattern, we set three factories. Topping factory, drink factory and pizza factory. These factories are used to create different type of toppings/drinks/pizzas. By using this disgn pattern, we make our program more flexible, we can esaily add a new topping/drink/pizza and assign different property to them without making major changes in our code.
+
+2.Builder design pattern, when we create the order, we silpt the process into serveral small parts to build an order. By using this design pattern, we can avoid long constructor and make our project more flexible.
+
+
+
+
+
+
+
+
 
