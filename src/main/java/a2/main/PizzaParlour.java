@@ -80,7 +80,6 @@ public class PizzaParlour {
             Drink drinks = d.getDrink(drink);
             menu.getDrinkPrice(drink,drinks);
             order.addDrink(drinks);
-            System.out.println("success added one drink" + '\n');
           } else {
             break;
           }
@@ -90,6 +89,7 @@ public class PizzaParlour {
         System.out.println("total price is " + price + '\n');
         countOrder++;
         orderManager.addOrderToList(order);
+        System.out.print(order.printPizzaAndTopping());
       } else if (options.equalsIgnoreCase("Cancel")) {
         System.out.println("Please enter the order number to cancel the order");
         String id = scanner.nextLine();

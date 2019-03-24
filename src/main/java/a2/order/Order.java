@@ -52,25 +52,25 @@ public class Order {
     return this.orderNumber;
   }
 
-  public HashMap<String,List<String>> printPizzaAndTopping() {
-    HashMap<String,List<String>> pizza = new HashMap<String, List<String>>();
+  public String printPizzaAndTopping() {
+    String printPandT = "";
     for (Pizza o : this.pizzas) {
-      List <String> printT = new ArrayList<String>();
+      printPandT = printPandT + o.getName() + '\n' + "Toppings : ";
       for(Topping t : o.getToppings()) {
-        printT.add(t.getName());
+        printPandT = printPandT + t.getName() + " ";
       }
-      pizza.put(o.getName(),printT);
+      printPandT = printPandT + '\n';
     }
-    return pizza;
+    printPandT = printPandT + '\n' + "Drinks : ";
+    String printD = "";
+    for (Drink o : this.drinks) {
+      printD = printD + o.getName() + " ";
+    }
+    printPandT = printPandT + printD;
+    return printPandT;
   }
 
-  public List<String> printDrink() {
-    List<String> printD = new ArrayList<String>();
-    for (Drink o : this.drinks) {
-      printD.add(o.getName());
-    }
-    return printD;
-  }
+
 
 
 
