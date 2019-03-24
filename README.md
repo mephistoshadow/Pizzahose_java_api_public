@@ -12,35 +12,35 @@ navigator:Siqi Yang
 
 
 Should give a reflection on how it went, and what you liked and disliked about this process:
-The process of the pair programming invovle a lot of discussions and in person meetings. We pick 3 days that are available for both of us to discuss the design pattern, how the overall structure if the project should be, and how we should start coding the project.
+The process of the pair programming involves a lot of discussions and in-person meetings. We pick 3 days that are available for both of us to discuss the design pattern, how the overall structure if the project should be, and how we should start coding the project.
 
 
-What we like about the process is that we found discussion will help us to solve many donfusions from reading the assignment handout. We will ask/search on piazza when we feel confuse and unsure.
+What we like about the process is that we found discussion will help us to solve many confusions from reading the assignment handout. We will ask/search on piazza when we feel confused and unsure.
 
 
-Disliked about the process is that we spend a lot of time convince each other about the design pattern, how to code the project, what is the type of the attributes, etc. We took a long time to conmunicate with each other what we have done and the input, output of functions.
+Disliked about the process is that we spend a lot of time convincing each other about the design pattern, how to code the project, what is the type of the attributes, etc. We took a long time to communicate with each other what we have done and the input, output of functions.
 
 
 
-How to use the Api:
+How to use the API:
 Using the main function, the user can achieve the following by typing Submit/update/cancel/delivery/Menu/Price:
 
-1.Submit: submit a order, which allow user to order pizzas, drinks, and toppings
+1.Submit: submit an order, which allows users to order pizzas, drinks, and toppings
 
-2.update: update a order
+2.update: update an order
 
-3.cancel: cancel a order
+3.cancel: cancel an order
 
-4.delivery: delivery a order useing different methods.
+4.delivery: delivery an order using different methods.
 
-5.Menu: return full menu.
+5.Menu: return the full menu.
 
-6.Price:return the price of a item.
+6.Price: return the price of an item.
 
-More instruction is typed in the main function. follow instructions that is printed out in the console.
+More instruction is typed in the main function. follow instructions that are printed out in the console.
 The default menu and price is saved in a menu.json file, which can be changed later using functions in the menu class.
 
-Tools: intellij 
+Tools: intellij
 
 Design pattern:
 1. factory design pattern:pizza factory,Drink factory, delivery factory
