@@ -53,8 +53,6 @@ public class Pizza {
   }
 
   public void preparation() {
-    Topping beef = new Beef();
-    this.addTopping(beef);
   }
 
 }

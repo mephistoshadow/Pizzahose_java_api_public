@@ -2,6 +2,8 @@ package a2.Pizza;
 
 import static org.junit.Assert.*;
 
+import a2.topping.Beef;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,44 +12,20 @@ import org.junit.Test;
  */
 public class VegetarianTest {
 
-  @Before
-  public void setUp() throws Exception {
-  }
-
   @Test
-  public void getPrice() throws Exception {
-  }
+  public void TestAllGetAndSet() throws Exception {
+    Vegetarian pizza = new Vegetarian();
+    Beef beef = new Beef();
+    pizza.setName("Vegetarian");
+    pizza.setPrice(12);
+    pizza.setSize("large");
+    pizza.addTopping(beef);
+    pizza.preparation();
+    Assert.assertEquals(12,pizza.getPrice(), 0.0);
+    Assert.assertEquals("Vegetarian",pizza.getName());
+    Assert.assertEquals("large",pizza.getSize());
+    Assert.assertTrue(pizza.getToppings().get(0) instanceof Beef);
 
-  @Test
-  public void getToppings() throws Exception {
-  }
-
-  @Test
-  public void setPrice() throws Exception {
-  }
-
-  @Test
-  public void getSize() throws Exception {
-  }
-
-  @Test
-  public void setSize() throws Exception {
-  }
-
-  @Test
-  public void getName() throws Exception {
-  }
-
-  @Test
-  public void setName() throws Exception {
-  }
-
-  @Test
-  public void addTopping() throws Exception {
-  }
-
-  @Test
-  public void preparation() throws Exception {
   }
 
 }

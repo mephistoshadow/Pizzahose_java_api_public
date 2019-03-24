@@ -51,7 +51,5 @@ public class Neapolitan extends Pizza {
 
   @Override
   public void preparation() {
-    Topping jalapenos = new Jalapenos();
-    this.toppings.add(jalapenos);
   }
 }

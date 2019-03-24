@@ -13,7 +13,7 @@ public class Pepperoni extends Pizza {
   private String name;
   private double price;
 
-  Pepperoni() {
+  public Pepperoni() {
     this.name = "Pepperoni";
     this.price = 3.5;
     toppings = new ArrayList<Topping>();
@@ -52,8 +52,6 @@ public class Pepperoni extends Pizza {
 
   @Override
   public void preparation() {
-    Topping mushrooms = new Mushroom();
-    this.toppings.add(mushrooms);
   }
 
 }

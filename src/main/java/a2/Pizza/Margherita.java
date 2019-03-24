@@ -51,7 +51,5 @@ public class Margherita extends Pizza {
 
   @Override
   public void preparation() {
-    Topping chicken = new Chicken();
-    this.toppings.add(chicken);
   }
 }

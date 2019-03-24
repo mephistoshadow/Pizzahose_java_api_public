@@ -52,9 +52,6 @@ public class Vegetarian extends Pizza {
 
   @Override
   public void preparation() {
-    Topping tomato = new Tomatoes();
-    this.toppings.add(tomato);
-
   }
 
 

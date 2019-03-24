@@ -2,52 +2,30 @@ package a2.Pizza;
 
 import static org.junit.Assert.*;
 
-import org.junit.Before;
+
+import a2.topping.Beef;
+import a2.topping.Topping;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
  * Created by melo45 on 2019-03-24.
  */
 public class MargheritaTest {
-
-  @Before
-  public void setUp() throws Exception {
-  }
-
   @Test
-  public void getPrice() throws Exception {
-  }
+  public void TestAllGetAndSet() throws Exception {
+    Margherita pizza = new Margherita();
+    Beef beef = new Beef();
+    pizza.setName("Margherita");
+    pizza.setPrice(12);
+    pizza.setSize("large");
+    pizza.addTopping(beef);
+    pizza.preparation();
+    Assert.assertEquals(12,pizza.getPrice(), 0.0);
+    Assert.assertEquals("Margherita",pizza.getName());
+    Assert.assertEquals("large",pizza.getSize());
+    Assert.assertTrue(pizza.getToppings().get(0) instanceof Beef);
 
-  @Test
-  public void getToppings() throws Exception {
-  }
-
-  @Test
-  public void setPrice() throws Exception {
-  }
-
-  @Test
-  public void getSize() throws Exception {
-  }
-
-  @Test
-  public void setSize() throws Exception {
-  }
-
-  @Test
-  public void getName() throws Exception {
-  }
-
-  @Test
-  public void setName() throws Exception {
-  }
-
-  @Test
-  public void addTopping() throws Exception {
-  }
-
-  @Test
-  public void preparation() throws Exception {
   }
 
 }
