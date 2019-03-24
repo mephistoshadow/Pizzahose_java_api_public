@@ -1,8 +1,7 @@
 package a2.topping;
 
 import static org.junit.Assert.*;
-
-import org.junit.Before;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -10,24 +9,14 @@ import org.junit.Test;
  */
 public class BeefTest {
 
-  @Before
-  public void setUp() throws Exception {
-  }
-
   @Test
-  public void getPrice() throws Exception {
-  }
+  public void TestAllMethod() throws Exception {
+    Beef drink = new Beef();
+    drink.setName("Beef");
+    drink.setPrice(12);
+    Assert.assertEquals(12,drink.getPrice(), 0.0);
+    Assert.assertEquals("Beef",drink.getName());
 
-  @Test
-  public void setPrice() throws Exception {
-  }
-
-  @Test
-  public void getName() throws Exception {
-  }
-
-  @Test
-  public void setName() throws Exception {
   }
 
 }
