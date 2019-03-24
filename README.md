@@ -1,15 +1,12 @@
 # a2-starter
 pair programmed features:
-Feature1:Submit a new order
-Feature2:Ask for the menu
-Should explain who the driver and navigator was for different parts of the features
 
-Feature1:Submit a new order
+Feature1:Submit a new order:
 Driver:Siqi Yang
 navigator:Yufei Yang
 
 
-Feature2:Ask for the menu
+Feature2:Ask for the menu:
 Driver:Yufei Yang
 navigator:Siqi Yang
 
@@ -27,11 +24,17 @@ Disliked about the process is that we spend a lot of time convince each other ab
 
 How to use the Api:
 Using the main function, the user can achieve the following by typing Submit/update/cancel/delivery/Menu/Price:
+
 1.Submit: submit a order, which allow user to order pizzas, drinks, and toppings
+
 2.update: update a order
+
 3.cancel: cancel a order
+
 4.delivery: delivery a order useing different methods.
+
 5.Menu: return full menu.
+
 6.Price:return the price of a item.
 
 More instruction is typed in the main function. follow instructions that is printed out in the console.
