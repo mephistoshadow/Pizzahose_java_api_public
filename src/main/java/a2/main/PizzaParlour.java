@@ -37,7 +37,7 @@ public class PizzaParlour {
       System.out.print("Submit a new order  /");
       System.out.print("Update existing order  /");
       System.out.print("cancel order   " + '\n' + '\n');
-      System.out.println("type Submit/update/cancel/delivery to command the system");
+      System.out.println("type Submit/update/cancel/delivery/Menu/Price to command the system");
       String options = scanner.nextLine();
       if (options.equalsIgnoreCase("Submit")) {
         Order order = new Order(countOrder);
@@ -226,6 +226,48 @@ public class PizzaParlour {
           }
           Delivery deliver=Delivery.SetDelivery( method, address,  details, countOrder);
           deliver.saveOrderDetail();
+      }
+      else if (options.equalsIgnoreCase("Menu")){
+        System.out.println("See the full menu");
+        menu.getMenu();
+
+
+      }
+      else if (options.equalsIgnoreCase("Price")){
+        System.out.println("type what kind of item that you want to check for the price:Pizza/Drink/Topping");
+        String type = scanner.nextLine();
+        if(type.equalsIgnoreCase("Pizza")){
+          System.out.println("type out what kind of pizza that you want to check? pepperoni, margherita, vegetarian, Neapolitan");
+          String pizza = scanner.nextLine();
+          System.out.println("type out what kind of size that you want? large/small");
+          String size = scanner.nextLine();
+          Pizza pizza2=p.getPizza(pizza);
+          System.out.print(menu.getPizzaPrice(pizza+" "+size,pizza2)) ;
+          System.out.println(" dollar");
+
+        }
+        else if(type.equalsIgnoreCase("Drink")){
+          System.out.println("what drink you want to check price?" + '\n');
+          System.out.println(
+                  "Coke, Diet Coke, Coke Zero, Pepsi, Diet Pepsi, Dr. Pepper, Water, Juice");
+          String drink = scanner.nextLine();
+          Drink d2 =d.getDrink(drink);
+          System.out.print(menu.getDrinkPrice(drink,d2));
+          System.out.println(" dollar");
+
+
+        }
+        else if(type.equalsIgnoreCase("Topping")){
+          System.out.println("what topping you want to check?" + '\n');
+          System.out.println(
+                  "olives, tomatoes, mushrooms, jalapenos, chicken, beef, pepperoni");
+          String toppings = scanner.nextLine();
+          Topping t1 =t.getTopping(toppings);
+          System.out.print(menu.getToppingPrice(toppings,t1));
+          System.out.println(" dollar");
+
+        }
+
       }
 
     }
