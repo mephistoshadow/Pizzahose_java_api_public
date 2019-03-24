@@ -1,6 +1,5 @@
 package a2.main;
 
-import a2.delivery.DeliveryFactory;
 import a2.Pizza.Pizza;
 import a2.Pizza.PizzaFactory;
 import a2.drink.Drink;
@@ -22,7 +21,7 @@ public class PizzaParlour {
     ToppingFactory t = new ToppingFactory();
     OrderManager orderManager = new OrderManager();
     int countOrder = 0;
-    String path = "./items/menu.json";
+    String path = "/Users/melo45/desktop/301A2/pair49-yangsiq1-yangyu35/menu.json";
     Menu menu = new Menu(path);
 
     Scanner scanner = new Scanner(System.in);
@@ -35,8 +34,8 @@ public class PizzaParlour {
       String options = scanner.nextLine();
       if (options.equalsIgnoreCase("Submit")) {
         Order order = new Order(countOrder);
-        while(true) {
-          System.out.println("Please enter the type of Pizza you want"+ '\n');
+        while (true) {
+          System.out.println("Please enter the type of Pizza you want" + '\n');
           System.out.println("pepperoni, margherita, vegetarian, Neapolitan");
           String pizza = scanner.nextLine();
           Pizza pizza_w = p.getPizza(pizza);
@@ -44,16 +43,19 @@ public class PizzaParlour {
           System.out.println("large / small" + '\n');
           String size = scanner.nextLine();
           String item = pizza + " " + size;
-          pizza_w.setSize(item);
+          pizza_w.setSize(size);
+          menu.getPizzaPrice(item,pizza_w);
 //          pizza_w.preparation();
-          System.out.println(pizza_w.getName());
+//          System.out.println(pizza_w.getName());
           while (true) {
             System.out.println("Choose the topping you like, enter exit to finish" + '\n');
             System.out.println("olives, tomatoes, mushrooms, jalapenos, chicken, beef, pepperoni");
             String topping = scanner.nextLine();
             if (!topping.equalsIgnoreCase("exit")) {
-              pizza_w.addTopping(t.getTopping(topping));
-              System.out.println("success added topping"+ '\n');
+              Topping to = t.getTopping(topping);
+              menu.getToppingPrice(topping,to);
+              pizza_w.addTopping(to);
+              System.out.println("success added topping" + '\n');
             } else {
               break;
             }
@@ -62,19 +64,21 @@ public class PizzaParlour {
           order.addPizza(pizza_w);
           System.out.println("Done! type continue to add one more, type exit to add drink ");
           String command = scanner.nextLine();
-          if(command.equalsIgnoreCase("exit")) {
+          if (command.equalsIgnoreCase("exit")) {
             break;
-          }else if(command.equalsIgnoreCase("continue")) {
+          } else if (command.equalsIgnoreCase("continue")) {
             continue;
           }
 
         }
         while (true) {
-          System.out.println("Choose the drink you like, enter exit to finish"+ '\n');
-          System.out.println("Coke, Diet Coke, Coke Zero, Pepsi, Diet Pepsi, Dr. Pepper, Water, Juice");
+          System.out.println("Choose the drink you like, enter exit to finish" + '\n');
+          System.out
+              .println("Coke, Diet Coke, Coke Zero, Pepsi, Diet Pepsi, Dr. Pepper, Water, Juice");
           String drink = scanner.nextLine();
           if (!drink.equalsIgnoreCase("exit")) {
             Drink drinks = d.getDrink(drink);
+            menu.getDrinkPrice(drink,drinks);
             order.addDrink(drinks);
             System.out.println("success added one drink" + '\n');
           } else {
@@ -82,26 +86,26 @@ public class PizzaParlour {
           }
         }
         double price = order.calculatePrice();
-        System.out.println("your order is done, your order number is " + countOrder + '\n' );
-        System.out.println("total price is " + price + '\n' );
+        System.out.println("your order is done, your order number is " + countOrder + '\n');
+        System.out.println("total price is " + price + '\n');
         countOrder++;
         orderManager.addOrderToList(order);
-      } else if(options.equalsIgnoreCase("Cancel")){
+      } else if (options.equalsIgnoreCase("Cancel")) {
         System.out.println("Please enter the order number to cancel the order");
         String id = scanner.nextLine();
         int id_real = Integer.parseInt(id);
-        try{
+        try {
           orderManager.cancelOrder(id_real);
           System.out.println("Success");
-        }catch(Exception e){
+        } catch (Exception e) {
           System.out.println("we can not find order number");
         }
 
-      } else if(options.equalsIgnoreCase("update")) {
-        while(true) {
+      } else if (options.equalsIgnoreCase("update")) {
+        while (true) {
           System.out.println("Please enter the order number you want to update, type exit to exit");
           String id = scanner.nextLine();
-          if(!id.equalsIgnoreCase("exit")) {
+          if (!id.equalsIgnoreCase("exit")) {
             int id_real = Integer.parseInt(id);
             System.out.println("what you want to update" + '\n');
             System.out.println("delete/add");
@@ -115,8 +119,9 @@ public class PizzaParlour {
                 System.out.println(
                     "pepperoni, margherita, vegetarian, Neapolitan");
                 String pizza = scanner.nextLine();
-                orderManager.deleteOrderPizza(id_real,pizza);
-                System.out.println("now the price is" + orderManager.getSepcificPrice(id_real)+ '\n');
+                orderManager.deleteOrderPizza(id_real, pizza);
+                System.out
+                    .println("now the price is" + orderManager.getSepcificPrice(id_real) + '\n');
                 System.out.println("successfully delete the order's pizza" + '\n');
               } else if (option.equalsIgnoreCase("drinks")) {
                 System.out.println("what drink you want to delete" + '\n');
@@ -124,7 +129,8 @@ public class PizzaParlour {
                     "Coke, Diet Coke, Coke Zero, Pepsi, Diet Pepsi, Dr. Pepper, Water, Juice");
                 String drink = scanner.nextLine();
                 orderManager.deleteOrderDrink(id_real, drink);
-                System.out.println("now the price is" + orderManager.getSepcificPrice(id_real)+ '\n');
+                System.out
+                    .println("now the price is" + orderManager.getSepcificPrice(id_real) + '\n');
                 System.out.println("successfully clear the order's drink" + '\n');
               } else if (option.equalsIgnoreCase("topping")) {
                 System.out.println(
@@ -136,12 +142,13 @@ public class PizzaParlour {
                 System.out.println(
                     "olives, tomatoes, mushrooms, jalapenos, chicken, beef, pepperoni");
                 String topping = scanner.nextLine();
-                orderManager.deleteOrderTopping(id_real, pizza_w,topping);
-                System.out.println("now the price is" + orderManager.getSepcificPrice(id_real)+ '\n');
+                orderManager.deleteOrderTopping(id_real, pizza_w, topping);
+                System.out
+                    .println("now the price is" + orderManager.getSepcificPrice(id_real) + '\n');
                 System.out.println("successfully remove the order's topping" + '\n');
               }
 
-            }else if (command.equalsIgnoreCase("add")) {
+            } else if (command.equalsIgnoreCase("add")) {
               System.out.println("what you want to update" + '\n');
               System.out.println("Orders pizza / drinks / topping");
               String option = scanner.nextLine();
@@ -154,8 +161,12 @@ public class PizzaParlour {
                 System.out.println("what size you want" + '\n');
                 System.out.println("large / small" + '\n');
                 String size = scanner.nextLine();
-                orderManager.addOrderPizza(id_real,pizza_new);
-                System.out.println("now the price is" + orderManager.getSepcificPrice(id_real)+ '\n');
+                String item = pizza + " " + size;
+                pizza_new.setSize(size);
+                menu.getPizzaPrice(item,pizza_new);
+                orderManager.addOrderPizza(id_real, pizza_new);
+                System.out
+                    .println("now the price is" + orderManager.getSepcificPrice(id_real) + '\n');
                 System.out.println("successfully add the order's pizza" + '\n');
               } else if (option.equalsIgnoreCase("drinks")) {
                 System.out.println("what drink you want to delete" + '\n');
@@ -163,8 +174,10 @@ public class PizzaParlour {
                     "Coke, Diet Coke, Coke Zero, Pepsi, Diet Pepsi, Dr. Pepper, Water, Juice");
                 String drink = scanner.nextLine();
                 Drink drink_new = d.getDrink(drink);
+                menu.getDrinkPrice(drink,drink_new);
                 orderManager.addOrderDrink(id_real, drink_new);
-                System.out.println("now the price is" + orderManager.getSepcificPrice(id_real)+ '\n');
+                System.out
+                    .println("now the price is" + orderManager.getSepcificPrice(id_real) + '\n');
                 System.out.println("successfully add the order's drink" + '\n');
               } else if (option.equalsIgnoreCase("topping")) {
                 System.out.println(
@@ -176,32 +189,20 @@ public class PizzaParlour {
                 System.out.println(
                     "olives, tomatoes, mushrooms, jalapenos, chicken, beef, pepperoni");
                 String topping = scanner.nextLine();
-                Topping topping_new =  t.getTopping(topping);
-                orderManager.addOrderTopping(id_real,pizza_w,topping_new);
-                System.out.println("now the price is" + orderManager.getSepcificPrice(id_real)+ '\n');
+                Topping topping_new = t.getTopping(topping);
+                menu.getToppingPrice(topping,topping_new);
+                orderManager.addOrderTopping(id_real, pizza_w, topping_new);
+                System.out
+                    .println("now the price is" + orderManager.getSepcificPrice(id_real) + '\n');
                 System.out.println("successfully add the order's topping" + '\n');
               }
             }
-          }else {
+          } else {
             break;
           }
 
         }
       }
-      //choose delivery
-      System.out.println("Delivery or Pickup");
-      String command = scanner.nextLine();
-      if(command=="Delivery"){
-        //delivery food and choose delivery method:
-        DeliveryFactory ubereat=new DeliveryFactory();
-        System.out.println("Choose the kind of delivery method? Ubereat/Foodora/PizzaPalour");
-        String delivery_method = scanner.nextLine();
-        System.out.println("Please type your address that you want to deliver to:");
-        String address = scanner.nextLine();
-        ubereat.SetDelivery("Ubereat","home","coke",1);
-      }
-
-
 
     }
 
