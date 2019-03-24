@@ -40,6 +40,9 @@ public class Pizza {
   public String getName() {
     return name;
   }
+  public List<Topping> getToppings() {
+    return this.toppings;
+  }
 
   public void setName(String name) {
     this.name = name;

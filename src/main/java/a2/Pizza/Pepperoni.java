@@ -20,7 +20,7 @@ public class Pepperoni extends Pizza {
   }
 
   public double getPrice() {
-    return price;
+    return this.price;
   }
 
   public void setPrice(double price) {
@@ -41,6 +41,9 @@ public class Pepperoni extends Pizza {
 
   public void setName(String name) {
     this.name = name;
+  }
+  public List<Topping> getToppings() {
+    return this.toppings;
   }
 
   public void addTopping(Topping topping) {
