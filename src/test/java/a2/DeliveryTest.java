@@ -63,22 +63,30 @@ public class DeliveryTest {
     @Test
     public void testSaveFoodora() {
         DeliveryFactory df = new DeliveryFactory();
-        Delivery d1 = df.SetDelivery("Ubereat", "home", "coke", 1);
+        Delivery d1 = df.SetDelivery("Foodora", "home", "coke", 1);
+        System.out.println(d1.getOrderNumber());
         d1.saveOrderDetail();
         String details = "Address:\n" + "Order Details:\n" + "Order Number:";
+        System.out.println(System.getProperty("user.dir"));
 
-        File file = new File("1.csv");
+        File file = new File(System.getProperty("user.dir")+"/1.csv");
         try {
+
             BufferedReader br = new BufferedReader(new FileReader(file));
-
             String st;
+            String detail="";
             while ((st = br.readLine()) != null) {
-                System.out.println(st);
+                detail+=st;
+                System.out.println(detail);
             }
+            Assert.assertEquals(detail,"\"Address:\",\"home\"\"Order Details:\",\"coke\"\"Order Number:\",\"1\"");
 
-        } catch {
+        } catch (IOException e) {
 
+            // do something
+            e.printStackTrace();
         }
+
     }
 
     @Test
