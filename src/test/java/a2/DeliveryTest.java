@@ -67,9 +67,7 @@ public class DeliveryTest {
     public void testSaveFoodora() {
         DeliveryFactory df = new DeliveryFactory();
         Delivery d1 = df.SetDelivery("Foodora", "home", "coke", 1);
-        System.out.println(d1.getOrderNumber());
         d1.saveOrderDetail();
-        System.out.println(System.getProperty("user.dir"));
 
         File file = new File(System.getProperty("user.dir")+"/1.csv");
         try {
@@ -79,7 +77,7 @@ public class DeliveryTest {
             String detail="";
             while ((st = br.readLine()) != null) {
                 detail+=st;
-                System.out.println(detail);
+
             }
             Assert.assertEquals(detail,"\"Address:\",\"home\"\"Order Details:\",\"coke\"\"Order Number:\",\"1\"");
 
@@ -95,10 +93,7 @@ public class DeliveryTest {
     public void testSaveUbereat() {
         DeliveryFactory df = new DeliveryFactory();
         Delivery d1 = df.SetDelivery("Ubereat", "home", "coke", 1);
-        System.out.println(d1.getOrderNumber());
         d1.saveOrderDetail();
-        System.out.println(System.getProperty("user.dir"));
-
         File file = new File(System.getProperty("user.dir")+"/1.json");
         JSONParser jsonParser = new JSONParser();
         String detail="";
@@ -111,7 +106,6 @@ public class DeliveryTest {
             Long number=(Long) obj.get("Order Number:");
             int num=number.intValue();
             detail=address+Details+num;
-            System.out.println(detail);
             Assert.assertEquals(detail,"homecoke1");
             
         } catch (FileNotFoundException e) {
