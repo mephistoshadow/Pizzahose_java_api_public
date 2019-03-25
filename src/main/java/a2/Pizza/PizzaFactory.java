@@ -2,6 +2,11 @@ package a2.Pizza;
 
 public class PizzaFactory {
 
+  /**
+   * giving a name and return an instance of pizza.
+   * @param name the name we want to add.
+   * @return the pizza object.
+   */
   public Pizza getPizza(String name) {
     if (name.equalsIgnoreCase("pepperoni")) {
       return new Pepperoni();

@@ -36,7 +36,7 @@ public class PizzaParlour {
       System.out.println("What can I do for you" + '\n');
       System.out.print("Submit a new order  /");
       System.out.print("Update existing order  /");
-      System.out.print("cancel order   " + '\n' + '\n');
+      System.out.print("cancel order/ / if you have done an order, before submit new order, remember to set delivery detail for last order. " + '\n' + '\n');
       System.out.println("type Submit /update /cancel /delivery /Menu /Price to command the system");
       String options = scanner.nextLine();
       if (options.equalsIgnoreCase("Submit")) {

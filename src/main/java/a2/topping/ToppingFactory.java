@@ -3,6 +3,11 @@ package a2.topping;
 
 public class ToppingFactory {
 
+  /**
+   * by giving a name return an instance for topping.
+   * @param name the name of topping.
+   * @return the topping object.
+   */
   public Topping getTopping(String name) {
     if (name.equalsIgnoreCase("olives")) {
       return new Olives();

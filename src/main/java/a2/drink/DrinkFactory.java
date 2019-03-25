@@ -1,10 +1,13 @@
 package a2.drink;
 
-/**
- * Created by melo45 on 2019-03-22.
- */
+
 public class DrinkFactory {
 
+  /**
+   * this is the method we create the instance for the sepcific type of drink.
+   * @param name the name of the drink.
+   * @return the drink object we want to create.
+   */
   public Drink getDrink(String name) {
     if (name.equalsIgnoreCase("Coke")) {
       return new Coke();

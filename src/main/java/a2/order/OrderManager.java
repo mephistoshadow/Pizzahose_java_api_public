@@ -11,10 +11,18 @@ public class OrderManager {
   private List<Order> orderList = new ArrayList<Order>();
 
 
+  /**
+   * this is we add the order to the order list.
+   * @param order the order we want to add.
+   */
   public void addOrderToList(Order order) {
     orderList.add(order);
   }
 
+  /**
+   * we get the sepcific order from order list, and remove it to cancel.
+   * @param id the id of the order.
+   */
   public void cancelOrder(int id) {
     for (int i = 0; i < this.orderList.size(); i++) {
       if (this.orderList.get(i).getId() == id) {
@@ -24,10 +32,19 @@ public class OrderManager {
 
   }
 
+  /**
+   * we return the whole orders into a list.
+   * @return the list of the orders.
+   */
   public List<Order> getOrderList() {
     return this.orderList;
   }
 
+  /**
+   * get one perticular order using id.
+   * @param id the order's id.
+   * @return the order obejct.
+   */
   public Order getOrder(int id) {
     for (Order anOrderList : this.orderList) {
       if (anOrderList.getId() == id) {
@@ -37,6 +54,11 @@ public class OrderManager {
     return null;
   }
 
+  /**
+   * add one pizza for perticular order.
+   * @param id the order id.
+   * @param pizza the pizza we want to add.
+   */
   public void addOrderPizza(int id, Pizza pizza) {
     for (Order o : orderList) {
       if (o.getId() == id) {
@@ -45,6 +67,11 @@ public class OrderManager {
     }
   }
 
+  /**
+   * delete the order's pizza.
+   * @param id the order's id.
+   * @param pizza the pizza name, we want to delete.
+   */
   public void deleteOrderPizza(int id,String pizza) {
     for (Order o : orderList) {
       if (o.getId() == id) {
@@ -59,6 +86,11 @@ public class OrderManager {
     }
   }
 
+  /**
+   * we add one drink to the order.
+   * @param id the order's id.
+   * @param drink the drinks.
+   */
   public void addOrderDrink(int id, Drink drink) {
     for (Order o : orderList) {
       if (o.getId() == id) {
@@ -67,6 +99,11 @@ public class OrderManager {
     }
   }
 
+  /**
+   * delete drink from the order.
+   * @param id the order's id.
+   * @param drink the drink we want to delete.
+   */
   public void deleteOrderDrink(int id, String drink) {
     for (Order o : orderList) {
       if (o.getId() == id) {
@@ -81,6 +118,12 @@ public class OrderManager {
     }
   }
 
+  /**
+   * add the topping for particular order's perticular pizza.
+   * @param id the order's id.
+   * @param pizza the pizza.
+   * @param topping the topping we want to add.
+   */
   public void addOrderTopping(int id, String pizza,Topping topping) {
     for (Order o : orderList) {
       if (o.getId() == id) {
@@ -95,6 +138,12 @@ public class OrderManager {
     }
   }
 
+  /**
+   * delete the topping from the order's pizzza.
+   * @param id the order's id.
+   * @param pizza the pizza we want to add.
+   * @param topping the topping we want to delete.
+   */
   public void deleteOrderTopping(int id, String pizza,String topping) {
     for (Order o : orderList) {
       if (o.getId() == id) {
@@ -114,6 +163,11 @@ public class OrderManager {
     }
   }
 
+  /**
+   * get the price for one order.
+   * @param id the id of the order.
+   * @return the price of that order.
+   */
   public double getSepcificPrice(int id) {
     for (Order o : orderList) {
       if (o.getId() == id) {
